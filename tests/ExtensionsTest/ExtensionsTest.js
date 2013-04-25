@@ -39,7 +39,7 @@ var extensionsTestItemNames = [
      //runNotificationCenterTest();
      cc.log("not implement");
      }
-     },*/
+     },
     {
         itemTitle:"CCControlButtonTest",
         testScene:function () {
