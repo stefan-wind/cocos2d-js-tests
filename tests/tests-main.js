@@ -366,9 +366,9 @@ var testNames = [
             return new NodeTestScene();
         }
     },
-    //"MotionStreakTest",
     {
         title:"OpenGL Test",
+        resource:g_opengl_resources,
         platforms: PLATFORM_JSB_AND_WEBGL,
         testScene:function () {
             return new OpenGLTestScene();
@@ -393,6 +393,7 @@ var testNames = [
     {
         title:"Performance Test",
         platforms: PLATFORM_ALL,
+        resource:g_performace,
         testScene:function () {
             return new PerformanceTestScene();
         }
