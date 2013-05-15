@@ -52,6 +52,7 @@ var tests_files = [
     'ExtensionsTest/S9SpriteTest/S9SpriteTest.js',
     'ExtensionsTest/ExtensionsTest.js',
     'ExtensionsTest/TableViewTest/TableViewTestScene.js',
+    'XHRTest/XHRTest.js',
     'TileMapTest/TileMapTest.js',
     'TransitionsTest/TransitionsTest.js',
     'UnitTest/UnitTest.js',
