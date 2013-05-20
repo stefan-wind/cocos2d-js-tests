@@ -82,7 +82,7 @@ var XHRTestLayer = cc.Layer.extend({
         sys.garbageCollect();
         var that = this;
         xhr.onreadystatechange = function() {
-
+            cc.log("TEST GET: xhr.onreadystatechange..., status: " + xhr.status);
             var httpStatus = xhr.statusText;
             var response = xhr.responseText.substring(0,50) + "...";
             var responseLabel = cc.LabelTTF.create("GET Response (50 chars): \n" + response, "Thonburi", 16);
@@ -90,11 +90,15 @@ var XHRTestLayer = cc.Layer.extend({
 
             responseLabel.setPosition(cc.p(100, winSize.height - 220));
             statusGetLabel.setString("Status: Got GET response! " + httpStatus);
-
         }
         
         xhr.send();
         sys.garbageCollect();
+                                   
+        this.scheduleOnce(function(){
+            cc.log("GET: GC in next frame...");
+            sys.garbageCollect();
+        });
     },
 
     sendPostRequest: function() {
@@ -110,6 +114,7 @@ var XHRTestLayer = cc.Layer.extend({
         xhr.open("POST", "http://httpbin.org/post");
         xhr.onreadystatechange = function() {
 
+            cc.log("TEST POST: xhr.onreadystatechange..., status: " + xhr.status);
             var httpStatus = xhr.statusText;
             var response = xhr.responseText.substring(0,50) + "...";
             var responseLabel = cc.LabelTTF.create("POST Response (50 chars):  \n" + response, "Thonburi", 16);
@@ -122,6 +127,10 @@ var XHRTestLayer = cc.Layer.extend({
         
         xhr.send("test=ok");
         sys.garbageCollect();
+        this.scheduleOnce(function(){
+            cc.log("POST: GC in next frame...");
+            sys.garbageCollect();
+        });
     },
 
     toExtensionsMainLayer:function (sender) {
