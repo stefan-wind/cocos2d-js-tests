@@ -79,7 +79,7 @@ var XHRTestLayer = cc.Layer.extend({
         statusGetLabel.setString("Status: Send Get Request to httpbin.org");
 
         xhr.open("GET", "http://httpbin.org/get");
-
+        sys.garbageCollect();
         var that = this;
         xhr.onreadystatechange = function() {
 
@@ -92,8 +92,9 @@ var XHRTestLayer = cc.Layer.extend({
             statusGetLabel.setString("Status: Got GET response! " + httpStatus);
 
         }
-
+        
         xhr.send();
+        sys.garbageCollect();
     },
 
     sendPostRequest: function() {
@@ -118,21 +119,15 @@ var XHRTestLayer = cc.Layer.extend({
             statusPostLabel.setString("Status: Got POST response! " + httpStatus);
 
         }
-
+        
         xhr.send("test=ok");
-
+        sys.garbageCollect();
     },
 
     toExtensionsMainLayer:function (sender) {
         var scene = new ExtensionsTestScene();
         scene.runThisTest();
-    },
-
-    scrollViewDidScroll:function (view) {
-    },
-    scrollViewDidZoom:function (view) {
     }
-
 });
 
 XHRTestLayer.create = function () {
