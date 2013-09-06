@@ -55,6 +55,7 @@ var tests_files = [
     'ExtensionsTest/ExtensionsTest.js',
     'ExtensionsTest/TableViewTest/TableViewTestScene.js',
     'ExtensionsTest/NetworkTest/WebSocketTest.js',
+    'ExtensionsTest/ArmatureTest/ArmatureTest.js',
     'XHRTest/XHRTest.js',
     'TileMapTest/TileMapTest.js',
     'TransitionsTest/TransitionsTest.js',

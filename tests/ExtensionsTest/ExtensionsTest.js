@@ -39,7 +39,7 @@ var extensionsTestItemNames = [
      //runNotificationCenterTest();
      cc.log("not implement");
      }
-     },
+     },*/
     {
         itemTitle:"CCControlButtonTest",
         testScene:function () {
@@ -80,6 +80,15 @@ var extensionsTestItemNames = [
         itemTitle:"WebSocketTest",
         testScene:function () {
             runWebSocketTest();
+        }
+    },
+    {
+        itemTitle:"ArmatureTest",
+        testScene:function () {
+            var pScene = new ArmatureTestScene();
+            if (pScene) {
+                pScene.runThisTest();
+            }
         }
     }
 ];
